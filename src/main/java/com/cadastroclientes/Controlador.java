@@ -1,6 +1,8 @@
 package com.cadastroclientes;
 
 
+import java.util.ArrayList;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,8 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.util.ArrayList;
 
 public class Controlador {
     @FXML
@@ -59,7 +59,7 @@ public class Controlador {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erro");
             alert.setHeaderText("Ocorreu um erro!");
-            alert.setContentText("Verifique se o CPF está no formato correto: 99999-999");
+            alert.setContentText("Verifique se o CEP está no formato correto: 99999-999");
             alert.show();
         }
     }
@@ -78,14 +78,22 @@ public class Controlador {
     @FXML
     private void cadastrar(){
         cliente = new Cliente();
-        cliente.endereco = new Endereco();
+        Endereco novoEndereco = new Endereco();
+        
+        
+        novoEndereco.setCep(cep.getText());
+        novoEndereco.setRua(rua.getText());
+        novoEndereco.setNumero(numero.getText());
+        novoEndereco.setCidade(cidade.getText());
+        novoEndereco.setEstado(estado.getText());
+    
+        
         cliente.setNome(nome.getText());
-        cliente.setCodigo(codigoCliente++);
+        cliente.setCodigo(codigoCliente++); 
         cliente.setTelefone(telefone.getText());
-        cliente.endereco.setCep(cep.getText());
-        cliente.endereco.setNumero(numero.getText());
-        cliente.endereco.setEstado(estado.getText());
-        cliente.endereco.setCidade(cidade.getText());
+        cliente.setEndereco(novoEndereco);
+    
+        
         cadastroClientes.add(cliente);
     }
 
