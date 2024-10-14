@@ -1,0 +1,9 @@
+com\cadastroclientes\Endereco.class
+com\cadastroclientes\App.class
+com\cadastroclientes\Cliente.class
+com\cadastroclientes\ControlarTela.class
+module-info.class
+com\cadastroclientes\Buscador.class
+com\cadastroclientes\Controlador.class
+com\cadastroclientes\TelaClientes.class
+com\cadastroclientes\Buscador$EnderecoInterno.class
