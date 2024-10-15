@@ -100,7 +100,7 @@ public class Controlador {
     @FXML
     private void listar(){
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("telaClientes.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Tela.fxml"));
             Parent root = fxmlLoader.load();
 
             Stage stage = new Stage();
