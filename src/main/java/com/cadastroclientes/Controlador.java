@@ -103,20 +103,15 @@ public class Controlador {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("telaClientes.fxml"));
             Parent root = fxmlLoader.load();
 
-            // Create a new Stage
             Stage stage = new Stage();
             stage.setTitle("Listar cadastros");
 
-            // Create a Scene with the loaded FXML file
             Scene scene = new Scene(root);
 
-            // Set the Scene to the Stage
             stage.setScene(scene);
 
-            // Show the Stage (window)
             stage.show();
 
-            // Used for listing the customers
             ControlarTela controlarTela = fxmlLoader.getController();
             controlarTela.listarCLientes(cadastroClientes);
 
